@@ -73,6 +73,10 @@ else
 	echo "$disk doesn't exist"
 	exit 121
 fi
+
+
+rm -rf /tmp/target.img
+
 echo "END!"
 echo "Don't forget to eject your disk drive!"
 
