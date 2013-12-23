@@ -25,7 +25,7 @@ echo " ### Ubuntu Key Maker ### "
 echo "File: $path_iso"
 read -p "Press a key to continue" key
 #convert file
-hdiutil convert -format UDRW -o /tmp/target.img $path_iso 2> /dev/null
+hdiutil convert -format UDRW -o /tmp/target.img $path_iso 
 
 echo "Where do you want to install the distribution?"
 
@@ -66,7 +66,7 @@ echo "$disk selected"
 #mv img file into disk selected
 if [ $check_disk -eq 1 ]
 	then
-	dd if=/tmp/target.img of=$disk_path bs=1m
+	dd if=/tmp/target.img.dmg of=$disk_path bs=1m
 else
 	echo "$disk_path doesn't exist"
 	exit 121
@@ -76,7 +76,7 @@ fi
 
 
 
-rm -rf /tmp/target.img
+rm -rf /tmp/target.img.dmg
 
 echo "END!"
 echo "Don't forget to eject your disk drive!"
