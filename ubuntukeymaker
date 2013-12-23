@@ -8,8 +8,10 @@ path_iso=$1
 
 while  ! [ -f $path_iso  ]
 do
-	read -p "Iso file:"
+	read -p "Iso file:" path_iso
 done
+echo "Ubuntu Key Maker"
+echo "Where do you want install the distribution?"
 
 list=$(diskutil list | grep '/')
 for disk_path in $list
@@ -17,20 +19,21 @@ do
 	echo $disk_path
 done
 
-echo "Where do you want install the distribution?"
-echo "Enter the number of the disk " 
-read -p ": "disk
-check_disk=0
-list=echo $list | sed 's/\/dev\///g'
+read -p ": disk" disk
+disk='disk'$disk
 
-for i in $list do
-	if [ $i = $disk ]
+check_disk=0
+list=$(echo $list | sed 's/\/dev\///g')
+
+for i in $list 
+do
+	if [ $i = $disk ] 
 		then
 		check_disk=1
 	fi
 done
 
-if [ check_disk -eq 1 ]
+if [ $check_disk -eq 1 ]
 	then
 	echo $disk
 else
