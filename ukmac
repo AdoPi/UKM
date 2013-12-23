@@ -6,6 +6,11 @@
 # You can do anything with this script.
 # But if you want to use my work you have to quote me
 
+if [[ $EUID -ne 0 ]]
+	then
+	echo "This script must be run as root"
+	exit 777
+fi
 
 #iso path
 path_iso=$1
@@ -51,7 +56,7 @@ partitions=(ls /dev/${disk}s*)
 for part in $partitions
 do
 echo "To continue you have to enter your password"
-	sudo umount $part	&> /dev/null
+	umount $part	&> /dev/null
 done
 
 echo "All partitions are unmouted"
@@ -63,7 +68,7 @@ echo "$disk selected"
 if [ $check_disk -eq 1 ]
 	then
 	echo "To continue you have to enter your password"
-	sudo dd if=/tmp/target.img of=$disk bs=1m
+	dd if=/tmp/target.img of=$disk bs=1m
 else
 	echo "$disk doesn't exist"
 	exit 121
