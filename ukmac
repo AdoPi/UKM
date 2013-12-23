@@ -1,6 +1,12 @@
+# UKMac <===> Ubuntu Key Maker for MAC
+# Author : Adonis NAJIMI (FR) 
+# Github : @Adopi
+# You can do anything with this script.
+# But if you want to use my work you have to quote me
+
+
 #iso path
 path_iso=$1
-
 
 #choose file if path_iso doesn't exist
 while  ! [ -f $path_iso  ]
@@ -51,4 +57,4 @@ echo "END!"
 echo "Don't forget to eject your disk drive!"
 
 
-#end
+#END UKMac
