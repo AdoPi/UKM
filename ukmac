@@ -1,6 +1,6 @@
 #!/bin/bash
 # UKMac <===> Ubuntu Key Maker for MAC
-# Version 1.0
+# Version 1.5
 # Author : Adonis NAJIMI (FR) 
 # Github : @Adopi
 # You can do anything with this script.
@@ -25,7 +25,7 @@ echo " ### Ubuntu Key Maker ### "
 echo "File: $path_iso"
 read -p "Press a key to continue" key
 #convert file
-hdiutil convert -format UDRW -o /tmp/target.img $path_iso 
+hdiutil convert -format UDRW -o /tmp/target.img $path_iso 2> /dev/null
 
 echo "Where do you want to install the distribution?"
 
@@ -50,29 +50,22 @@ do
 	fi
 done
 
-#umount all partitions of this disk
-partitions=(ls /dev/${disk}s*)
-
-for part in $partitions
-do
-	umount $part	2> /dev/null
-done
-
-echo "All partitions are unmouted"
 
 
 disk_path="/dev/"$disk
 echo "$disk selected"
+read -p "Press a key to finish the installation on $disk" key
 #mv img file into disk selected
 if [ $check_disk -eq 1 ]
 	then
+	#umount all partitions of this disk
+	diskutil unmountDisk $disk
+echo "All partitions are unmouted"
 	dd if=/tmp/target.img.dmg of=$disk_path bs=1m
 else
 	echo "$disk_path doesn't exist"
 	exit 121
 fi
-
-
 
 
 
@@ -82,4 +75,5 @@ echo "END!"
 echo "Don't forget to eject your disk drive!"
 
 exit 0
+
 #END UKMac
