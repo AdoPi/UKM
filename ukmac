@@ -50,7 +50,15 @@ do
 	fi
 done
 
+#umount all partitions of this disk
+partitions=(ls /dev/${disk}s*)
 
+for part in $partitions
+do
+	umount $part	2> /dev/null
+done
+
+echo "All partitions are unmouted"
 
 
 disk_path="/dev/"$disk
@@ -58,23 +66,14 @@ echo "$disk selected"
 #mv img file into disk selected
 if [ $check_disk -eq 1 ]
 	then
-	echo "To continue you have to enter your password"
 	dd if=/tmp/target.img of=$disk_path bs=1m
 else
 	echo "$disk_path doesn't exist"
 	exit 121
 fi
 
-#umount all partitions of this disk
-partitions=(ls /dev/${disk}s*)
 
-for part in $partitions
-do
-echo "To continue you have to enter your password"
-	umount $part	2> /dev/null
-done
 
-echo "All partitions are unmouted"
 
 
 rm -rf /tmp/target.img
