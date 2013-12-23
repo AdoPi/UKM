@@ -23,9 +23,9 @@ done
 
 echo " ### Ubuntu Key Maker ### "
 echo "File: $path_iso"
-echo "press a key to continue"
+read -p "Press a key to continue" key
 #convert file
-hdiutil convert -format UDRW -o /tmp/target.img $path_iso
+hdiutil convert -format UDRW -o /tmp/target.img $path_iso 2> /dev/null
 
 echo "Where do you want to install the distribution?"
 
@@ -71,7 +71,7 @@ partitions=(ls /dev/${disk}s*)
 for part in $partitions
 do
 echo "To continue you have to enter your password"
-	umount $part	&> /dev/null
+	umount $part	2> /dev/null
 done
 
 echo "All partitions are unmouted"
