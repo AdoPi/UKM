@@ -9,11 +9,11 @@
 
     int main( int argc, char **argv )
     {
-        QApplication a( argc, argv );
+        QApplication app( argc, argv );
 
         QPushButton valider( "Lancer", 0 );
         valider.resize( 100, 100 );
         QObject::connect(valider,SIGNAL(clicked()),this,SLOT(lance_bash());
         valider.show();
-        return a.exec();
+        return app.exec();
     }

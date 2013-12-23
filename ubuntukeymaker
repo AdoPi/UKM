@@ -10,7 +10,8 @@ while  ! [ -f $path_iso  ]
 do
 	read -p "Iso file:" path_iso
 done
-echo "Ubuntu Key Maker"
+echo " ### Ubuntu Key Maker ### "
+echo "File: $path_iso"
 echo "Where do you want install the distribution?"
 
 list=$(diskutil list | grep '/')
@@ -37,7 +38,7 @@ if [ $check_disk -eq 1 ]
 	then
 	echo $disk
 else
-	echo "ERROR in disk_name"
+	echo "$disk doesn't exist"
 fi
 
 
