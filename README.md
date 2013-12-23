@@ -10,4 +10,8 @@ UKM
     
     $ chmod u+x ukmac
     $ ./ukmac path_to_your_ubuntu_iso_file
+    
+###Notes
+  You must download the iso file firstly
+  You can find this file on the [ubuntu website](http://www.ubuntu.com/download/desktop)
   
