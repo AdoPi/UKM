@@ -44,11 +44,12 @@ do
 	fi
 done
 
+disk="/dev/"$disk
 echo "$disk selected"
 #mv img file into disk selected
 if [ $check_disk -eq 1 ]
 	then
-	$disk="/dev/"$disk
+	echo "To continue you have to enter your password"
 	sudo dd if=/tmp/target.img of=$disk bs=1m
 else
 	echo "$disk doesn't exist"
@@ -57,5 +58,5 @@ fi
 echo "END!"
 echo "Don't forget to eject your disk drive!"
 
-
+exit 0
 #END UKMac
