@@ -45,6 +45,18 @@ do
 	fi
 done
 
+#umount all partitions of this disk
+partitions=(ls /dev/${disk}s*)
+
+for part in $partitions
+do
+echo "To continue you have to enter your password"
+	sudo umount $part	&> /dev/null
+done
+
+echo "All partitions are unmouted"
+
+
 disk="/dev/"$disk
 echo "$disk selected"
 #mv img file into disk selected
