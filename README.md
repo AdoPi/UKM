@@ -7,7 +7,7 @@ UKM
   At the end of the execution, you can eject your usb key and install ubuntu everywhere you want.
 
 ##How to execute?
-
-  $ chmod u+x ukmac
-  $ ./ukmac path_to_your_ubuntu_iso
+    
+    $ chmod u+x ukmac
+    $ ./ukmac path_to_your_ubuntu_iso
   
