@@ -9,5 +9,5 @@ UKM
 ##How to execute?
     
     $ chmod u+x ukmac
-    $ ./ukmac path_to_your_ubuntu_iso
+    $ ./ukmac path_to_your_ubuntu_iso_file
   
