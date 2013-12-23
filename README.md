@@ -1,4 +1,4 @@
-UKM
+UKMac
 ===
 
 #Ubuntu Key Maker for Mac OS X
