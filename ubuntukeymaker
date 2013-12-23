@@ -1,0 +1,49 @@
+#telechargement
+#wget ou curl
+#convertion iso en img
+#choix de la cible ISO ( possible de pas telecharger depuis l'app
+
+#iso path
+path_iso=$1
+
+while  ! [ -f $path_iso  ]
+do
+	read -p "Iso file:"
+done
+
+list=$(diskutil list | grep '/')
+for disk_path in $list
+do
+	echo $disk_path
+done
+
+echo "Where do you want install the distribution?"
+echo "Enter the number of the disk " 
+read -p ": "disk
+check_disk=0
+list=echo $list | sed 's/\/dev\///g'
+
+for i in $list do
+	if [ $i = $disk ]
+		then
+		check_disk=1
+	fi
+done
+
+if [ check_disk -eq 1 ]
+	then
+	echo $disk
+else
+	echo "ERROR in disk_name"
+fi
+
+
+
+
+
+#hdiutil convert -format UDRW -o ~/path/to/target.img ~/path/to/ubuntu.iso
+#umount si necessaire
+#choix de la cible DISK
+#sudo dd if=/path/to/downloaded.img of=/dev/rdiskN bs=1m
+#notification fin
+#eject
