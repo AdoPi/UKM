@@ -11,7 +11,7 @@ UKMac
 ##How to execute?
     
     $ chmod u+x ukmac
-    $ sudo ./ukmac path_to_your_ubuntu_iso_file
+    $ sudo ./ukmac path_to_your_linux_iso_file
     
 ###Notes
   You must download the iso file firstly.
