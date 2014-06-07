@@ -61,7 +61,9 @@ if [ $check_disk -eq 1 ]
 	#umount all partitions of this disk
 	diskutil unmountDisk $disk
 echo "All partitions are unmouted"
+echo "Wait until the process completes"
 	dd if=/tmp/target.img.dmg of=$disk_path bs=1m
+echo "Done!"
 else
 	echo "$disk_path doesn't exist"
 	exit 121
