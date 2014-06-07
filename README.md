@@ -16,5 +16,5 @@ UKMac
 ###Notes
   You must download the iso file firstly.
   
-  You can find this file on the [ubuntu website](http://www.ubuntu.com/download/desktop)
+  For instance you can find the Ubuntu file on the [ubuntu website](http://www.ubuntu.com/download/desktop)
   
