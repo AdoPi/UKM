@@ -6,7 +6,7 @@ UKMac
   
   In addition this script ask you to enter the disk name of your usb stick and it will install into the drive selected.
   
-  At the end of the execution, you can eject your usb key and install ubuntu everywhere you want.
+  At the end of the execution, you can eject your usb key and install your linux distrib everywhere you want.
 
 ##How to execute?
     
