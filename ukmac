@@ -21,7 +21,7 @@ do
 	read -p "Iso file:" path_iso
 done
 
-echo " ### Ubuntu Key Maker ### "
+echo " ### Linux Key Maker ### "
 echo "File: $path_iso"
 read -p "Press a key to continue" key
 #convert file
