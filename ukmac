@@ -4,7 +4,7 @@
 # Author : Adonis NAJIMI (FR) 
 # Github : @Adopi
 # You can do anything with this script.
-# But if you want to use my work you have to quote me
+# But if you want to use my work, quote me please
 
 if [[ $EUID -ne 0 ]]
 	then
@@ -76,5 +76,3 @@ rm -rf /tmp/target.img.dmg
 echo "Don't forget to eject your disk drive!"
 echo "Have a nice day!"
 exit 0
-
-#END UKMac
