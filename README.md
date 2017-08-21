@@ -1,7 +1,7 @@
-UKMac
+UKMac : Ubuntu|Linux Key Maker for Mac OS X
 ===
 
-# Linux Key Maker for Mac OS X
+# What's Linux Key Maker?
   It's a litte script to convert an iso file to img format.
   
   In addition this script ask you to enter the disk name of your usb stick and it will install into the drive selected.
